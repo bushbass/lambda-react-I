@@ -1,0 +1,14 @@
+button { 
+    border-radius: 5px;
+    color: blue;
+    background: white;
+}
+
+li {
+    font-size: 1.5rem;
+    list-style: none;
+}
+
+.completed {
+    text-decoration: line-through;
+}
