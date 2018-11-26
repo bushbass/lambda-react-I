@@ -7,7 +7,7 @@
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
-  "homepage":"https://bushbass.github.io/lambda-react-I/",
+  "homepage": "https://bushbass.github.io/lambda-react-I/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
@@ -15,5 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "keywords": [],
+  "description": "my version of lambda school React-I todo project"
 }
