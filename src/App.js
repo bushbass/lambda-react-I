@@ -49,6 +49,11 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to the to do app for Alex!</h2>
+        <ul>
+          <li>Add a to do</li>
+          <li>Click a to do to mark it complete</li>
+          <li>Click "clear completed" to remove marked to dos</li>
+        </ul>
 
         <TodoList
           handleItemClick={this.handleItemClick}
