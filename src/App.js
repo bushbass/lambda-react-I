@@ -48,7 +48,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Welcome to Alex's Todo App! test</h2>
+        <h2>Welcome to the to do app for Alex!</h2>
 
         <TodoList
           handleItemClick={this.handleItemClick}
