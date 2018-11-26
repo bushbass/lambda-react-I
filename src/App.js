@@ -48,7 +48,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Welcome to the to do app for Alex! test</h2>
+        <h2>Welcome to the to do app for Alex!</h2>
         <ul>
           <li>Add a to do</li>
           <li>Click a to do to mark it complete</li>
