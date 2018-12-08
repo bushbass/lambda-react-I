@@ -1,11 +1,13 @@
-import React from "react";
-import TodoList from "./components/TodoComponents/TodoList";
-import TodoForm from "./components/TodoComponents/TodoForm";
+import React from 'react';
+import Title from './components/TodoComponents/Title';
+import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
+import './app.css';
 
 class App extends React.Component {
   state = {
-    todoArray: [{ task: "laundry", id: Date.now(), completed: false }],
-    currentTodo: ""
+    todoArray: [{ task: 'laundry', id: Date.now(), completed: false }],
+    currentTodo: ''
   };
 
   handleInputChange = event =>
@@ -20,7 +22,7 @@ class App extends React.Component {
     };
     this.setState({
       todoArray: [...this.state.todoArray, newEventObject],
-      currentTodo: ""
+      currentTodo: ''
     });
   };
 
@@ -47,20 +49,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to the to do app for Alex!</h2>
-        <ul>
-          <li>Add a to do</li>
-          <li>Click a to do to mark it complete</li>
-          <li>Click "clear completed" to remove marked to dos</li>
-        </ul>
-
+      <div className="main m-5">
+        <Title />
         <TodoList
+          className="todo-list"
           handleItemClick={this.handleItemClick}
           todoArray={this.state.todoArray}
         />
-
         <TodoForm
+          className="todo-form"
           currentTodo={this.state.currentTodo}
           handleInputChange={this.handleInputChange}
           handleSubmit={this.handleSubmit}
