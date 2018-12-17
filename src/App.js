@@ -9,17 +9,33 @@ class App extends React.Component {
     todoArray: [{ task: 'laundry', id: Date.now(), completed: false }],
     currentTodo: ''
   };
+  componentDidMount() {
+    console.log(
+      'componentDidMount - before accessing local storage',
+      this.state.todoArray
+    );
+    const localTodoArray = JSON.parse(localStorage.todoListState);
+    this.setState({
+      todoArray: localTodoArray
+    });
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate - ', this.state.todoArray);
+    localStorage.setItem('todoListState', JSON.stringify(this.state.todoArray));
+  }
 
-  handleInputChange = event =>
+  handleInputChange = event => {
     this.setState({ currentTodo: event.target.value });
+  };
 
   handleSubmit = event => {
     event.preventDefault();
     const newEventObject = {
-      completed: false,
+      task: this.state.currentTodo,
       id: Date.now(),
-      task: this.state.currentTodo
+      completed: false
     };
+
     this.setState({
       todoArray: [...this.state.todoArray, newEventObject],
       currentTodo: ''
