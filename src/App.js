@@ -11,7 +11,14 @@ class App extends React.Component {
       todoArray: [{ task: 'laundry', id: Date.now(), completed: false }],
       currentTodo: ''
     };
-    localStorage.setItem('todoListState', JSON.stringify(this.state.todoArray));
+    if (!localStorage.todoListState) {
+      localStorage.setItem(
+        'todoListState',
+        JSON.stringify(this.state.todoArray)
+      );
+    }
+
+    console.log('constructor ', this.state.todoArray);
   }
 
   componentDidMount() {
