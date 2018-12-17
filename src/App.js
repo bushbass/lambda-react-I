@@ -5,10 +5,15 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import './app.css';
 
 class App extends React.Component {
-  state = {
-    todoArray: [{ task: 'laundry', id: Date.now(), completed: false }],
-    currentTodo: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoArray: [{ task: 'laundry', id: Date.now(), completed: false }],
+      currentTodo: ''
+    };
+    localStorage.setItem('todoListState', JSON.stringify(this.state.todoArray));
+  }
+
   componentDidMount() {
     console.log(
       'componentDidMount - before accessing local storage',
