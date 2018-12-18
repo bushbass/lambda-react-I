@@ -17,9 +17,9 @@ class App extends React.Component {
 
   componentDidMount() {
     // console.log(
-      'componentDidMount - before accessing local storage',
-      this.state.todoArray
-    );
+    //   'componentDidMount - before accessing local storage',
+    //   this.state.todoArray
+    // );
     if (!localStorage.todoListState) {
       localStorage.setItem(
         'todoListState',
@@ -33,7 +33,7 @@ class App extends React.Component {
     });
   }
   componentDidUpdate() {
-    console.log('componentDidUpdate - ', this.state.todoArray);
+    // console.log('componentDidUpdate - ', this.state.todoArray);
     localStorage.setItem('todoListState', JSON.stringify(this.state.todoArray));
   }
 
