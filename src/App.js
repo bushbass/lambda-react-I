@@ -12,11 +12,11 @@ class App extends React.Component {
       currentTodo: ''
     };
 
-    console.log('constructor ', this.state.todoArray);
+    // console.log('constructor ', this.state.todoArray);
   }
 
   componentDidMount() {
-    console.log(
+    // console.log(
       'componentDidMount - before accessing local storage',
       this.state.todoArray
     );
